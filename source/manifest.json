@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "唱吧下载工具",
+  "description": "唱吧的歌曲预览网页导出歌曲需要付费，本插件直接把“导出该作品“按钮的动作替换成歌曲真实路径，便于下载。by James Swineson 2014-03-08",
+  "version": "1.0",
+  "permissions": [
+    "http://changba.com/"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://changba.com/s/*"],
+      "js": ["jquery-2.1.0.min.js", "script.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
